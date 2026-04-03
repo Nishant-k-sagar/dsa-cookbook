@@ -8,6 +8,29 @@
   color: var(--color-text);
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
   min-height: 160px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 360px) {
+  .topic-card {
+    padding: var(--space-3);
+    min-height: 140px;
+  }
+
+  .topic-card-title {
+    font-size: var(--text-base);
+  }
+
+  .topic-card-description {
+    font-size: var(--text-xs);
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  .topic-card-count {
+    font-size: 0.65rem;
+  }
 }
 
 .topic-card:hover {
@@ -83,6 +106,7 @@
   line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
