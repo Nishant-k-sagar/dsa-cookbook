@@ -1,6 +1,16 @@
+import { useState, useEffect } from 'react';
 import './Footer.css';
 
 export function Footer() {
+  const [visits, setVisits] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetch('https://api.counterapi.dev/v1/dsa-cookbook/visits/up')
+      .then(res => res.json())
+      .then(data => setVisits(data.count))
+      .catch(() => setVisits(null));
+  }, []);
+
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -21,6 +31,12 @@ export function Footer() {
         <span className="footer-copyright">© DSA Cookbook</span>
         <span className="footer-separator">|</span>
         <span className="footer-copyright">2026</span>
+        {visits !== null && (
+          <>
+            <span className="footer-separator">|</span>
+            <span className="footer-copyright">{visits.toLocaleString()} visits</span>
+          </>
+        )}
         <span className="footer-separator">|</span>
         <a
           href="https://github.com/Nishant-k-sagar/dsa-cookbook"

@@ -103,3 +103,30 @@
     font-size: 0.8rem;
   }
 }
+
+@media (max-width: 360px) {
+  .footer {
+    padding: var(--space-1) 0;
+  }
+
+  .footer-content {
+    gap: var(--space-1);
+  }
+
+  .footer-link,
+  .footer-separator,
+  .footer-copyright,
+  .footer-github-link {
+    font-size: 0.65rem;
+  }
+
+  .footer-github-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .footer-heart-icon {
+    width: 10px;
+    height: 10px;
+  }
+}
