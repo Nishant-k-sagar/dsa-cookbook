@@ -16,22 +16,6 @@ It is not:
 
 It is a **reference platform** - a technical notebook you consult when studying a topic or a problem pattern.
 
----
-
-## 2. Content Philosophy
-
-### Problem statements are facts, not content
-LeetCode owns the problem statements. We fetch them. We do not paraphrase, regenerate, or editorialize them. The statement field in every problem comes from LeetCode, sanitized of HTML, nothing else.
-
-### Educational content is the product
-The intuition, key observations, pseudocode, C++ implementation, pitfalls - that is what we generate. That is what users come for. It must be:
-- **Accurate** - the code must solve the problem, the complexity must be correct
-- **Specific** - pitfalls must describe a real mistake, not generic advice like "be careful with edge cases"
-- **Progressive** - intuition first, then mechanics, then code. Build understanding, not just solutions.
-- **Concise** - if it can be said in fewer words, say it in fewer words
-
-### The C++ code must work
-The C++ implementation uses the exact LeetCode function signature from the template. It must compile. It must be correct. It is not pseudocode in disguise. If Mistral generates incorrect code, it is a bug in the pipeline, not acceptable content.
 
 ---
 
@@ -64,14 +48,9 @@ Forbidden patterns:
 - Hardcoded topic names, slugs, or problem data anywhere in the frontend
 - Editing `src/generated/` files manually
 
-### The LeetCode client is the only way to talk to LeetCode
-All LeetCode API calls go through `leetCodeClient.ts`. No other file makes HTTP calls to LeetCode.
 
-### The Mistral client is the only way to talk to Mistral
+### The Mistral client is the way to talk to Mistral
 All Mistral API calls go through `mistralClient.ts`. No other file makes HTTP calls to Mistral. Retry logic, token limits, and error handling live here only.
-
-### dataService.ts is the only way the frontend touches data
-No React component, hook, or utility may import Back4App or read `graph.json` directly. Everything goes through `dataService.ts`. This makes switching data sources (local dev vs Back4App production) a one-file change.
 
 ---
 
@@ -84,10 +63,10 @@ LeetCode rate limits. Every problem fetch is cached for 24 hours in `src/.leetco
 If a problem fails (LeetCode fetch fails, Mistral returns garbage, JSON parse fails after recovery attempt), log the failure with the slug and reason, then continue to the next problem. Report all failures at the end. Never abort the full topic generation for one bad problem.
 
 ### Validate before pushing, always
-The push scripts must refuse to push any document that fails validation. Partial data in Back4App is worse than no data. A topic with missing pitfalls or no C++ code should not reach production.
+The push scripts must refuse to push any document that fails validation. Partial data in db is worse than no data. A topic with missing pitfalls or no C++ code should not reach production.
 
 ### Token budget
-Mistral `max_tokens` is set to 64000 per call. Call 1 (content fields) and Call 2 (code) are always separate calls - never combine them. Keeping them separate prevents truncation on either, and makes Call 2 independently retryable.
+Mistral `max_tokens` is set to 64000 per call. Call 1 (content fields) and Call 2 (code) are always separate calls - do not combine them. Keeping them separate prevents truncation on either, and makes Call 2 independently retryable.
 
 ---
 
