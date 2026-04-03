@@ -1,0 +1,71 @@
+.problem-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: border-color 0.15s ease;
+}
+
+.problem-card:hover {
+  border-color: var(--color-accent);
+}
+
+.problem-card-title {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  margin: 0;
+}
+
+.problem-card-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.problem-card-difficulty {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+}
+
+.problem-card-status {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+}
+
+.status-todo {
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+}
+
+.status-attempted {
+  background: rgba(255, 152, 0, 0.15);
+  border: 1px solid rgba(255, 152, 0, 0.5);
+  color: #e65100;
+}
+
+[data-theme="dark"] .status-attempted {
+  background: rgba(255, 152, 0, 0.2);
+  border: 1px solid rgba(255, 152, 0, 0.6);
+  color: #ffb74d;
+}
+
+.status-solved {
+  background: rgba(76, 175, 80, 0.15);
+  border: 1px solid rgba(76, 175, 80, 0.5);
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .status-solved {
+  background: rgba(76, 175, 80, 0.2);
+  border: 1px solid rgba(76, 175, 80, 0.6);
+  color: #81c784;
+}

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@types/cors": "^2.8.19",
+    "concurrently": "^9.2.1",
+    "cors": "^2.8.6",
+    "puppeteer": "^24.39.1"
+  }
+}

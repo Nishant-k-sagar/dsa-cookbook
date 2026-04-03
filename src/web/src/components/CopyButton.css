@@ -1,0 +1,44 @@
+.copy-button {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 0.375rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.copy-button svg {
+  stroke: currentColor;
+}
+
+.copy-button:hover {
+  background: var(--color-bg);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.copy-button--copied {
+  background: var(--color-bg-secondary);
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+.copy-button--error {
+  background: rgba(244, 67, 54, 0.15);
+  border-color: rgba(244, 67, 54, 0.5);
+  color: #c62828;
+}
+
+[data-theme="dark"] .copy-button--error {
+  background: rgba(244, 67, 54, 0.2);
+  border-color: rgba(244, 67, 54, 0.6);
+  color: #ef5350;
+}
+
+.copy-button:active {
+  transform: translateY(1px);
+}

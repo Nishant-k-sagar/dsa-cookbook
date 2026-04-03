@@ -1,0 +1,10 @@
+name = "dsa-cookbook-api"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[vars]
+COSMOS_DATABASE = "dsa-cookbook"
+
+# Secrets (set via wrangler CLI or dashboard):
+# wrangler secret put COSMOS_ENDPOINT
+# wrangler secret put COSMOS_KEY

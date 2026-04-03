@@ -1,0 +1,235 @@
+.search-results-page {
+  padding: var(--space-10) var(--space-4);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.search-results-header {
+  margin-bottom: var(--space-10);
+}
+
+.search-results-title {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  margin: 0 0 var(--space-2);
+  color: var(--color-text);
+}
+
+.search-results-query {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.search-results-loading,
+.search-results-empty {
+  text-align: center;
+  padding: var(--space-10);
+  color: var(--color-text-secondary);
+}
+
+.search-results-empty p {
+  margin-bottom: var(--space-2);
+}
+
+.search-results-hint {
+  font-size: var(--text-sm);
+  opacity: 0.8;
+}
+
+.search-results-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.search-results-section:last-child {
+  margin-bottom: 0;
+}
+
+.search-results-section-title {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.search-results-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.search-result-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-result-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.search-result-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+  flex: 1;
+}
+
+.search-result-title {
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-result-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+}
+
+.search-result-badge {
+  flex-shrink: 0;
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  background: var(--color-bg-secondary);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  margin-left: var(--space-3);
+  font-weight: 500;
+}
+
+.search-results-problems {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+@media (max-width: 1024px) {
+  .search-results-page {
+    padding: var(--space-8) var(--space-4);
+  }
+
+  .search-results-title {
+    font-size: var(--text-2xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .search-results-page {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .search-results-header {
+    margin-bottom: var(--space-8);
+  }
+
+  .search-results-title {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-1);
+  }
+
+  .search-results-query {
+    font-size: var(--text-base);
+  }
+
+  .search-results-section {
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+  }
+
+  .search-results-section-title {
+    font-size: var(--text-lg);
+  }
+
+  .search-result-card {
+    padding: var(--space-3);
+  }
+
+  .search-result-title {
+    font-size: var(--text-sm);
+  }
+
+  .search-result-subtitle {
+    font-size: var(--text-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .search-results-page {
+    padding: var(--space-4) var(--space-3);
+  }
+
+  .search-results-header {
+    margin-bottom: var(--space-6);
+  }
+
+  .search-results-title {
+    font-size: var(--text-xl);
+  }
+
+  .search-results-query {
+    font-size: var(--text-sm);
+  }
+
+  .search-results-section {
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+  }
+
+  .search-results-section-title {
+    font-size: var(--text-base);
+  }
+
+  .search-result-card {
+    padding: var(--space-2);
+  }
+
+  .search-result-title {
+    font-size: var(--text-xs);
+  }
+
+  .search-result-subtitle {
+    font-size: 0.625rem;
+  }
+
+  .search-result-badge {
+    font-size: 0.5625rem;
+    padding: 2px var(--space-1);
+  }
+}
+
+@media (max-width: 320px) {
+  .search-results-page {
+    padding: var(--space-3) var(--space-2);
+  }
+
+  .search-results-title {
+    font-size: var(--text-lg);
+  }
+
+  .search-results-grid {
+    gap: var(--space-2);
+  }
+
+  .search-result-card {
+    padding: var(--space-2);
+  }
+}

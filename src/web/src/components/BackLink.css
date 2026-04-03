@@ -1,0 +1,11 @@
+.back-link {
+  display: inline-block;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-4);
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}

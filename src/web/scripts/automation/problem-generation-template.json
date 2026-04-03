@@ -1,0 +1,153 @@
+{
+  "notes": {
+    "purpose": "Complete template for problem content generation flow used by contentGenerator.ts",
+    "flow": [
+      "problem_context is used to build prompts",
+      "call_1_content_fields is the exact JSON shape expected from the first AI call",
+      "call_2_code_fields is the exact JSON shape expected from the second AI call",
+      "final_generated_problem is the final shape written into generated/<topic>.json under problems[]",
+      "final_generated_file is the full shape written into generated/<topic>.json"
+    ]
+  },
+  "problem_context_template": {
+    "title": "Problem Title",
+    "slug": "problem-slug",
+    "difficulty": "Easy",
+    "statement": "Plain extracted statement text",
+    "constraints": "Plain extracted constraints text",
+    "examples": "Plain extracted examples text",
+    "hints": [
+      "Hint 1",
+      "Hint 2"
+    ],
+    "tags": [
+      "array",
+      "binary-search"
+    ],
+    "topicSlug": "topic-slug",
+    "cppTemplate": "class Solution { public: int solve(...); };"
+  },
+  "call_1_content_fields_template": {
+    "key_observations": [
+      "Observation 1",
+      "Observation 2"
+    ],
+    "intuition": "Short explanation of why the method works.",
+    "approach": [
+      "Step 1",
+      "Step 2",
+      "Step 3"
+    ],
+    "pseudocode": [
+      "Initialize ...",
+      "Loop ...",
+      "Return ..."
+    ],
+    "pitfalls": [
+      "Pitfall 1",
+      "Pitfall 2"
+    ],
+    "time_complexity": "O(n log n)",
+    "space_complexity": "O(1)",
+    "connection_to_subtopic": "How this connects to the topic/subtopic."
+  },
+  "call_2_code_fields_template": {
+    "cpp": "class Solution {\npublic:\n    int solve(...) {\n        // implementation\n    }\n};"
+  },
+  "final_generated_problem_template": {
+    "id": "problem-slug",
+    "title": "Problem Title",
+    "topic_id": "topic-slug",
+    "subtopic_id": "subtopic-slug",
+    "leetcode_id": 1234,
+    "leetcode_slug": "problem-slug",
+    "leetcode_url": "https://leetcode.com/problems/problem-slug/",
+    "source": "LeetCode",
+    "difficulty": "Easy",
+    "importance": "Crucial",
+    "rating": 1300,
+    "difficulty_bucket": "standard",
+    "tags": [
+      "array",
+      "binary-search"
+    ],
+    "time_complexity": "O(n log n)",
+    "space_complexity": "O(1)",
+    "pitfalls": [],
+    "content": {
+      "statement": "Plain extracted statement text",
+      "constraints": "Plain extracted constraints text",
+      "examples": "Plain extracted examples text",
+      "hints": [
+        "Hint 1",
+        "Hint 2"
+      ],
+      "key_observations": [
+        "Observation 1",
+        "Observation 2"
+      ],
+      "intuition": "Short explanation of why the method works.",
+      "approach": [
+        "Step 1",
+        "Step 2",
+        "Step 3"
+      ],
+      "pseudocode": [
+        "Initialize ...",
+        "Loop ...",
+        "Return ..."
+      ],
+      "pitfalls": [
+        "Pitfall 1",
+        "Pitfall 2"
+      ],
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(1)",
+      "connection_to_subtopic": "How this connects to the topic/subtopic."
+    },
+    "code": {
+      "cpp": "class Solution {\npublic:\n    int solve(...) {\n        // implementation\n    }\n};"
+    }
+  },
+  "topic_template": {
+    "id": "binary-search",
+    "title": "Binary Search",
+    "summary": "2-3 sentence summary",
+    "lc_rating_range": [
+      1200,
+      1600
+    ],
+    "target_audience": "DSA learners",
+    "prerequisites": [
+      "array basics",
+      "loops"
+    ],
+    "patterns": [
+      "pattern 1",
+      "pattern 2"
+    ],
+    "subtopics": [],
+    "time_complexity": "O(n)",
+    "space_complexity": "O(n)",
+    "pitfalls": [
+      "Common pitfall 1",
+      "Common pitfall 2"
+    ],
+    "edge_cases": [],
+    "content": {
+      "introduction": "Topic intro",
+      "key_patterns": "Key patterns explanation",
+      "common_pitfalls": "Common pitfalls explanation",
+      "when_to_use": "When to use this topic",
+      "related_topics": "Related topics"
+    },
+    "problemCount": 8
+  },
+  "final_generated_file_template": {
+    "schemaVersion": 1,
+    "topic": "See topic_template object above",
+    "problems": [
+      "See final_generated_problem_template objects above"
+    ]
+  }
+}

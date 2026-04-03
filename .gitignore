@@ -1,0 +1,55 @@
+# DSA Cookbook specific
+src/web/.leetcode-cache/
+src/web/generated/
+src/web/seeds/
+.env
+.env.local
+.env.production
+.env.*
+serviceAccountKey.json
+src/web/puter-session/
+src/web/google-session/
+src/web/public/data/graph.json
+*.pem
+.dev.vars
+
+# IDE and tool configurations
+.agentignore
+.kilocodemodes
+.clinerules/
+.kilocode/
+.qodo/
+
+# LeetCode cache
+.leetcode-cache/
+
+# Wrangler build artifacts (auto-generated, contains hardcoded paths)
+.wrangler/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+.cache
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+src/web/public/publicaly_available_problems/*
