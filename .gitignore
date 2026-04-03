@@ -1,7 +1,7 @@
 # DSA Cookbook specific
-src/web/.leetcode-cache/
-src/web/generated/
-src/web/seeds/
+.leetcode-cache/
+src/generated/
+src/seeds/
 .env
 .env.local
 .env.production
@@ -20,8 +20,17 @@ src/web/public/data/graph.json
 .kilocode/
 .qodo/
 
-# LeetCode cache
-.leetcode-cache/
+# TypeScript build info
+*.tsbuildinfo
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
 
 # Wrangler build artifacts (auto-generated, contains hardcoded paths)
 .wrangler/
